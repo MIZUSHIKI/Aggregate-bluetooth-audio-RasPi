@@ -46,6 +46,7 @@ def set_device_volume(vol, devName):
     if not m:
         return
     devIndex = m[-1]
+    print(f"Volume= {vol}, paIndex= {devIndex}, Dev= {devName}")
     setVolume = int(65535 * vol / 100)
     args = ['pacmd', 'set-source-volume', devIndex, f'{setVolume}']
     subprocess.run(args)
